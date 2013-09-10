@@ -1,0 +1,28 @@
+/* 
+ * Program that reads characters from standard input, and prints them out
+ * including line numbers preceding the line of text.
+ */
+
+#include<stdio.h>
+
+int main() {
+   int user_input = 0;
+   int line_number = 1;
+   int printed = 0;//0 for false
+
+   while ((user_input = getchar()) != EOF) {
+     if(printed == 0) {
+       printf("%d ", line_number);
+       printed = 1;//true
+     }//end if
+
+     putchar(user_input);
+     
+     if(user_input == '\n') {
+      line_number = line_number + 1;
+      printed = 0;
+      //printed = 1;
+     }
+
+   }//end while
+}//end main
